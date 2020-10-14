@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block title %}
+Kayıt ol
+{% endblock %}
+{% block body %}
+{% from "includes/formhelper.html" import render_field %}
+    <form method="post" style="text-align: center">
+    {{ render_field(form.username)}}
+    {{ render_field(form.password)}}
+    {{ render_field(form.MailsPassword)}}
+    <button class="btn btn-primary" type="submit">Kayıt ol</button>
+    </form>
+{% endblock %}

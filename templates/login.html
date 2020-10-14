@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block title %}
+Giriş yap
+{% endblock %}
+{% block body %}
+{% from "includes/formhelper.html" import render_field %}
+    <form method="post" style="text-align: center">
+    {{ render_field(form.username)}}
+    {{ render_field(form.password)}}
+    <button class="btn btn-primary" type="submit">Giriş yap</button>
+    </form>
+{% endblock %}

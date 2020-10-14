@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% block title %}
+Kontrol paneli
+{% endblock %}
+{% block body %}
+{% if can_process==1 %}
+    <div class="center" style="text-align: center">
+        <form action="/create" class="form-horizontal" method="post">
+            <button type="submit" class="btn-primary w-25">Hesap oluştur</button>
+        </form>
+        <hr>
+        <h2>Hesaplar</h2>
+        {% if data %}
+        {% for i in data %}
+                <p>{{ i.Mail }}</p>
+        {% endfor %}
+        {% else %}
+        <h5>Henüz bir hesabın yok</h5>
+        {% endif %}
+    </div>
+{% elif can_process==0 %}
+<div style="text-align: center;display: block;width: 100%;">
+    <h6 class="text-danger">Şuan hesabında mevcut bir işlem var. Aynı anda birden fazla işlem yapamazsın</h6>
+</div>
+    {% if data %}
+        {% for i in data %}
+                <p>{{ i.get("Mail") }}</p>
+        {% endfor %}
+        {% else %}
+        <h5>Henüz bir hesabın yok</h5>
+    {% endif %}
+{% else %}
+    {% if data %}
+        {% for i in data %}
+                <p>{{ i.get("Mail") }}</p>
+        {% endfor %}
+        {% else %}
+        <h5>Henüz bir hesabın yok</h5>
+    {% endif %}
+{% endif %}
+{% endblock %}
