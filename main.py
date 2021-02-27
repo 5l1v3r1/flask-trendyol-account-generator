@@ -8,10 +8,10 @@ __version__ = "1.0"
 
 app = Flask(__name__)
 app.secret_key = "notrustly1"
-app.config["MYSQL_HOST"] = "yapayyazilim.mooo.com"
-app.config["MYSQL_USER"] = "root"
-app.config["MYSQL_PASSWORD"] = "notrustly1"
-app.config["MYSQL_DB"] = "trendyolbot"
+app.config["MYSQL_HOST"] = "host"
+app.config["MYSQL_USER"] = "user"
+app.config["MYSQL_PASSWORD"] = "password"
+app.config["MYSQL_DB"] = "db_name"
 app.config["MYSQL_CURSORCLASS"] = "DictCursor"
 mysql = MySQL(app)
 
