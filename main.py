@@ -7,7 +7,7 @@ from bot import creater
 __version__ = "1.0"
 
 app = Flask(__name__)
-app.secret_key = "notrustly1"
+app.secret_key = "secretkey"
 app.config["MYSQL_HOST"] = "host"
 app.config["MYSQL_USER"] = "user"
 app.config["MYSQL_PASSWORD"] = "password"
